@@ -1,0 +1,14 @@
+<div id="<%= id %>" class="stats">
+  <p class="title"><%=h title %></p>
+  <p class="weight">
+    <span class="label">Weight: </span> <%= stats[:weight] %> lbs
+  </p>
+  <p class="bodyfat">
+    <span class="label">Bodyfat: </span>
+    <%=number_to_percentage stats[:bodyfat], :precision=>1 %>
+  </p>
+  <p class="waist"><span class="label">Waist: </span><%= stats[:waist] %>"</p>
+  <p class="vertical">
+    <span class="label">Vertical: </span><%= stats[:vertical] %>"
+  </p>
+</div>

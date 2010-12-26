@@ -1,0 +1,67 @@
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('visualization', '1', {packages: ['linechart']});
+</script>
+<script type="text/javascript">
+var weightRows = new Array();
+var bodyfatRows = new Array();
+var waistRows = new Array();
+
+function createRows() {
+  var weightRow = new Array();
+  var bodyfatRow = new Array();
+  var waistRow = new Array();
+
+<% @weigh_ins.reverse_each do |weigh_in| %>
+  var weighInDate = new Date('<%= weigh_in.end_date.to_s(:date_only) %>');
+  weightRow.push(weighInDate);
+  weightRow.push(<%= weigh_in.weight %>);
+  weightRows.push(weightRow);
+  weightRow = new Array();
+
+  bodyfatRow.push(weighInDate);
+  bodyfatRow.push(<%= weigh_in.abf %> * 100);
+  bodyfatRows.push(bodyfatRow);
+  bodyfatRow = new Array();
+
+  waistRow.push(weighInDate);
+  waistRow.push(<%= weigh_in.waist %>);
+  waistRows.push(waistRow);
+  waistRow = new Array();
+<% end %>
+}
+
+function drawVisualization() {
+  createRows();
+
+  var weightData = new google.visualization.DataTable();
+  weightData.addColumn('date', 'Date');
+  weightData.addColumn('number', 'Weight (lbs)');
+  weightData.addRows(weightRows);
+
+  var bodyfatData = new google.visualization.DataTable();
+  bodyfatData.addColumn('date', 'Date');
+  bodyfatData.addColumn('number', 'Bodyfat (%)');
+  bodyfatData.addRows(bodyfatRows);
+
+  var waistData = new google.visualization.DataTable();
+  waistData.addColumn('date', 'Date');
+  waistData.addColumn('number', 'Waist (inches)');
+  waistData.addRows(waistRows);
+
+  var dateFormatter = new google.visualization.DateFormat(
+      {formatType: 'medium'});
+
+  dateFormatter.format(weightData, 0);
+  dateFormatter.format(bodyfatData, 0);
+  dateFormatter.format(waistData, 0);
+
+  new google.visualization.LineChart(
+      document.getElementById('weightChart')).draw(weightData, null);
+  new google.visualization.LineChart(
+      document.getElementById('bodyfatChart')).draw(bodyfatData, null);
+  new google.visualization.LineChart(
+      document.getElementById('waistChart')).draw(waistData, null);
+}
+google.setOnLoadCallback(drawVisualization);
+</script>

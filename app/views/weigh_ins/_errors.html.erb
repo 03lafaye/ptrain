@@ -1,0 +1,7 @@
+<% if @weigh_in.errors.any? %>
+  <ul>
+    <% @weigh_in.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>

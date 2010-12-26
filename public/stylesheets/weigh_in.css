@@ -1,0 +1,127 @@
+/**
+ * weigh_in.css
+ * view: new.html.erb
+ */
+
+#header {
+  width: 1028px;
+  margin: auto;
+}
+
+#header .stats {
+  border: 1px solid #ddd;
+  padding: 4px;
+  width: 200px;
+  text-align: center;
+  font-size: 18px;
+}
+
+#header .stats .title {
+  font-weight: bold;
+}
+
+#header .stats .label {
+  font-size: 12px;
+  color: #ccc;
+}
+
+#header p.weight {
+}
+
+#header p.bodyfat {
+}
+
+#header p.waist {
+}
+
+#header p.vertical {
+}
+
+#header p.quote {
+  font-size: 10px;
+  width: 600px;
+}
+
+#header p.text {
+  font-style: italic;
+}
+
+#header #currentStats {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#header #goalImage {
+  display: inline-block;
+  width: 420px;
+}
+
+#header #quote {
+  margin: auto;
+}
+
+#header #goalStats {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.chart {
+  display: inline-block;
+  margin: 4px;
+  padding: 4px;
+}
+
+.lineChart {
+  height: 250px;
+  width: 450px;
+}
+
+table.box {
+	border: solid 1px #3399CC;
+	width: 100%;
+}
+
+table.box th {
+	background-color: #3399CC;
+	border: solid 1px white;
+	color: white;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+    padding: 4px;
+    text-align: center;
+}
+
+table.box td {
+	color: #0066CC;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+  padding: 4px;
+	text-align: right;
+}
+
+table.box td.fatLoss {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	color: white;
+	text-align: right;
+	background-color: red;
+}
+
+table.box td.massGain {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	color: white;
+	text-align: right;
+	background-color: green;
+}
+
+table.box tr.highlight {
+	background-color: #8888FF;
+}
+
+table.measurements input.numberField {
+}

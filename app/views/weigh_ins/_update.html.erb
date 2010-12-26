@@ -1,0 +1,96 @@
+<%= form_for(@weigh_in) do |f| %>
+
+  <%= render :partial => 'errors' %>
+
+  <div id="weigh_in">
+    <%= f.hidden_field :id %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :start_date %>
+
+    <p>
+    <%= f.date_select :end_date %>
+    </p>
+
+    <table class="measurements">
+      <tr>
+        <td>
+          <%= f.label :weight %>
+        </td>
+        <td>
+          <%= f.text_field :weight, :class => "numberField", :size => 4 %>
+        </td>
+        <td>
+          <%= f.label :waist %>
+        </td>
+        <td>
+          <%= f.text_field :waist, :class => "numberField", :size => 4 %>
+        </td>
+        <td>
+          <label for="nbf">BF%</label>
+        </td>
+        <td>
+          <%= f.text_field :nbf, :class => "numberField", :size => 4 %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="abf">ABF%</label>
+        </td>
+        <td>
+          <%= f.text_field :abf, :class => "numberField", :size => 4 %>
+        </td>
+        <td>
+          <%= f.label :chest %>
+        </td>
+        <td>
+          <%= f.text_field :chest, :class => "numberField", :size => 4 %>
+        </td>
+        <td>
+          <%= f.label :rfarm %>
+        </td>
+        <td>
+          <%= f.text_field :rfarm, :class => "numberField", :size => 4 %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.label :rbicep %>
+        </td>
+        <td>
+          <%= f.text_field :rbicep, :class => "numberField", :size => 4 %>
+        </td>
+        <td>
+          <%= f.label :neck %>
+        </td>
+        <td>
+          <%= f.text_field :neck, :class => "numberField", :size => 4 %>
+        </td>
+        <td>
+          <%= f.label :rcalf %>
+        </td>
+        <td>
+          <%= f.text_field :rcalf, :class => "numberField", :size => 4 %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.label :rupthigh %>
+        </td>
+        <td>
+          <%= f.text_field :rupthigh, :class => "numberField", :size => 4 %>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+    <%= f.label :comments %> <br />
+    <%= f.text_area :comments, :class => "comments" %>
+    </p>
+
+  </div>
+
+  <p>
+  <%= f.submit "Update" %>
+  </p>
+
+<% end %>

@@ -1,0 +1,96 @@
+<%= render :partial => 'chart' %>
+
+<div id="content">
+
+  <div id="header">
+    <%= render :partial => 'header_stats',
+      :locals => {
+        :id => 'currentStats',
+        :title => 'Current',
+        :stats => @current_stats } %>
+    <div id="goalImage">
+      <%= image_tag "georges-st-pierre.jpg" %>
+      <div class="quote">
+        <p class="text">
+          <%=h @quote.text %>&nbsp;
+          &mdash;<span class="author"><%=h @quote.author %></span>
+        </p>
+      </div>
+    </div>
+    <%= render :partial => 'header_stats',
+      :locals => {
+        :id => 'goalStats',
+        :title => 'Goal',
+        :stats => @goal_stats } %>
+  </div>
+
+  <div class="chart">
+    <h3>Weight Over Time</h3>
+    <div id="weightChart" class="lineChart"></div>
+  </div>
+  <div class="chart">
+    <h3>Bodyfat Over Time</h3>
+    <div id="bodyfatChart" class="lineChart"></div>
+  </div>
+  <div class="chart">
+    <h3>Waist Over Time</h3>
+    <div id="waistChart" class="lineChart"></div>
+  </div>
+
+  <p>
+  <%= link_to new_weigh_in_path do %>
+    <button class="pushButton">Add Weigh-In</button>
+  <% end %>
+  </p>
+
+
+  <%= stylesheet_link_tag "weigh_in" %>
+
+  <table border="1" cellpadding="0" class="box">
+    <tr>
+      <th>User</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Weight</th>
+      <th>Waist</th>
+      <th>Body Fat</th>
+      <th>Athletic Body Fat</th>
+      <th>Chest</th>
+      <th>Right Forearm</th>
+      <th>Right Bicep</th>
+      <th>Neck</th>
+      <th>Right Calf</th>
+      <th>Right Upper Thigh</th>
+      <th>Comments</th>
+      <th colspan="2">Commands</th>
+    </tr>
+
+  <% for weigh_in in @weigh_ins %>
+    <tr onmouseover="this.className='highlight';"
+        onmouseout="this.className= 'normal';" class="normal">
+      <td><%=h weigh_in.user_id %></td>
+      <td><%=h weigh_in.start_date.to_s(:date_only) %></td>
+      <td><%=h weigh_in.end_date.to_s(:date_only) %></td>
+      <td><%=h weigh_in.weight %>lbs</td>
+      <td><%=h weigh_in.waist %>"</td>
+      <td><%=h weigh_in.nbf * 100 %>%</td>
+      <td><%=h weigh_in.abf * 100 %>%</td>
+      <td><%=h weigh_in.chest %>"</td>
+      <td><%=h weigh_in.rfarm %>"</td>
+      <td><%=h weigh_in.rbicep %>"</td>
+      <td><%=h weigh_in.neck %>"</td>
+      <td><%=h weigh_in.rcalf %>"</td>
+      <td><%=h weigh_in.rupthigh %>"</td>
+      <td style="text-align: left;" width="20%"><%=h weigh_in.comments %></td>
+      </div>
+
+      <td><%= link_to 'Edit', edit_weigh_in_path(weigh_in) %></td>
+      <td><%= link_to 'Destroy', weigh_in, :confirm => 'Are you sure?',
+          :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <%= will_paginate @weigh_ins %>
+
+</div>
