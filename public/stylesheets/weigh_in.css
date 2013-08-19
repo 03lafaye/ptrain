@@ -54,6 +54,7 @@
 #header #goalImage {
   display: inline-block;
   width: 420px;
+  text-align: center;
 }
 
 #header #quote {
