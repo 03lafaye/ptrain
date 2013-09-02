@@ -56,12 +56,14 @@ function drawVisualization() {
   dateFormatter.format(bodyfatData, 0);
   dateFormatter.format(waistData, 0);
 
+  var options = {};
+
   new google.visualization.LineChart(
-      document.getElementById('weightChart')).draw(weightData, null);
+      document.getElementById('weightChart')).draw(weightData, options);
   new google.visualization.LineChart(
-      document.getElementById('bodyfatChart')).draw(bodyfatData, null);
+      document.getElementById('bodyfatChart')).draw(bodyfatData, options);
   new google.visualization.LineChart(
-      document.getElementById('waistChart')).draw(waistData, null);
+      document.getElementById('waistChart')).draw(waistData, options);
 }
 google.setOnLoadCallback(drawVisualization);
 </script>

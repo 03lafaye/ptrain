@@ -3,126 +3,175 @@
  * view: new.html.erb
  */
 
-#header {
-  width: 1028px;
-  margin: auto;
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
-#header .stats {
-  border: 1px solid #ddd;
-  padding: 4px;
-  width: 200px;
-  text-align: center;
-  font-size: 18px;
+a {
+    text-decoration: none;
 }
 
-#header .stats .title {
-  font-weight: bold;
+a:hover {
+    text-decoration: underline;
 }
 
-#header .stats .label {
-  font-size: 12px;
-  color: #ccc;
+.clear {
+    clear: both;
 }
 
-#header p.weight {
+.header, .outer {
+    float: right;
+    right: 50%;
+    position: relative;
 }
 
-#header p.bodyfat {
+.inner {
+    float: right;
+    right: -50%;
+    position: relative;
 }
 
-#header p.waist {
+.header .stats {
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 4px;
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
 }
 
-#header p.vertical {
+.header .stats {
+    font-weight: 300;
 }
 
-#header p.quote {
-  font-size: 10px;
-  width: 600px;
+.header .stats .title {
+    font-weight: 400;
 }
 
-#header p.text {
-  font-style: italic;
+.header .stats .label {
+    font-size: 10px;
+    color: gray;
+    text-transform: uppercase;
 }
 
-#header #currentStats {
-  display: inline-block;
-  vertical-align: top;
+.header p.weight {
 }
 
-#header #goalImage {
-  display: inline-block;
-  width: 420px;
-  text-align: center;
+.header p.bodyfat {
 }
 
-#header #quote {
-  margin: auto;
+.header p.waist {
 }
 
-#header #goalStats {
-  display: inline-block;
-  vertical-align: top;
+.header p.vertical {
+}
+
+.header p.quote {
+    font-size: 10px;
+    width: 600px;
+}
+
+.header p.text {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.header #currentStats {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.goalImage {
+    display: inline-block;
+    text-align: center;
+    width: 420px;
+}
+
+.header #quote {
+    margin: auto;
+}
+
+.header #goalStats {
+    display: inline-block;
+    vertical-align: top;
 }
 
 .chart {
-  display: inline-block;
-  margin: 4px;
-  padding: 4px;
+    display: inline-block;
+    margin: 4px;
+    padding: 4px;
+}
+
+.chart h3 {
+    font-weight: 300;
+}
+
+div.button {
+    width: 100%;
+    text-align: right;
+}
+
+button.pushButton {
+    margin-right: 30px;
 }
 
 .lineChart {
-  height: 250px;
-  width: 450px;
+    height: 250px;
+    width: 450px;
 }
 
 table.box {
-	border: solid 1px #3399CC;
-	width: 100%;
+    margin: 10px auto 50px auto;
+    width: 98%;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 table.box th {
-	background-color: #3399CC;
-	border: solid 1px white;
-	color: white;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	font-weight: bold;
-    padding: 4px;
+    text-transform: uppercase;
+    color: gray;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px 4px;
     text-align: center;
+    border-bottom: 1px solid #ccc;
 }
 
 table.box td {
-	color: #0066CC;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	font-weight: bold;
-  padding: 4px;
-	text-align: right;
+    font-size: 16px;
+    font-weight: 350;
+    padding: 4px 8px 14px 8px;
+    text-align: right;
+    border-bottom: 1px solid #ccc;
+}
+
+table.box tr.end td {
+    border-bottom: none;
 }
 
 table.box td.fatLoss {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	font-weight: bold;
-	color: white;
-	text-align: right;
-	background-color: red;
+    color: white;
+    text-align: right;
+    background-color: red;
 }
 
 table.box td.massGain {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	font-weight: bold;
-	color: white;
-	text-align: right;
-	background-color: green;
+    color: white;
+    text-align: right;
+    background-color: green;
 }
 
 table.box tr.highlight {
-	background-color: #8888FF;
+    background-color: rgba(136, 136, 255, 0.4);
 }
 
 table.measurements input.numberField {
+}
+
+footer {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 300px;
+    text-align: center;
+    margin-top: 100px;
 }
