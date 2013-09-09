@@ -13,19 +13,19 @@
 
     <table class="measurements">
       <tr>
-        <td>
+        <td class="label">
           <%= f.label :weight %>
         </td>
         <td>
           <%= f.text_field :weight, :class => "numberField", :size => 4 %>
         </td>
-        <td>
+        <td class="label">
           <%= f.label :waist %>
         </td>
         <td>
           <%= f.text_field :waist, :class => "numberField", :size => 4 %>
         </td>
-        <td>
+        <td class="label">
           <label for="nbf">BF%</label>
         </td>
         <td>
@@ -33,19 +33,19 @@
         </td>
       </tr>
       <tr>
-        <td>
+        <td class="label">
           <label for="abf">ABF%</label>
         </td>
         <td>
           <%= f.text_field :abf, :class => "numberField", :size => 4 %>
         </td>
-        <td>
+        <td class="label">
           <%= f.label :chest %>
         </td>
         <td>
           <%= f.text_field :chest, :class => "numberField", :size => 4 %>
         </td>
-        <td>
+        <td class="label">
           <%= f.label :rfarm %>
         </td>
         <td>
@@ -53,19 +53,19 @@
         </td>
       </tr>
       <tr>
-        <td>
+        <td class="label">
           <%= f.label :rbicep %>
         </td>
         <td>
           <%= f.text_field :rbicep, :class => "numberField", :size => 4 %>
         </td>
-        <td>
+        <td class="label">
           <%= f.label :neck %>
         </td>
         <td>
           <%= f.text_field :neck, :class => "numberField", :size => 4 %>
         </td>
-        <td>
+        <td class="label">
           <%= f.label :rcalf %>
         </td>
         <td>
@@ -73,7 +73,7 @@
         </td>
       </tr>
       <tr>
-        <td>
+        <td class="label">
           <%= f.label :rupthigh %>
         </td>
         <td>
@@ -82,8 +82,10 @@
       </tr>
     </table>
 
+    <p class="label">
+    <%= f.label :comments %>
+    </p>
     <p>
-    <%= f.label :comments %> <br />
     <%= f.text_area :comments, :class => "comments" %>
     </p>
 

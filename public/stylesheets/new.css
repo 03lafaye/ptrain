@@ -5,3 +5,9 @@
 .newWeighIn h1 {
     font-weight: 300;
 }
+
+.newWeighIn .label {
+    color: gray;
+    text-transform: uppercase;
+    font-size: 12px;
+}
