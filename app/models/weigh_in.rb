@@ -6,7 +6,7 @@ class WeighIn < ActiveRecord::Base
     :allow_nil => true
 
   cattr_reader :per_page
-  @@per_page = 10
+  @@per_page = 20
 
   def self.find_last_weigh_in(params)
     self.find(:first, :order => 'end_date desc',
